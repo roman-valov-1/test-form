@@ -1,0 +1,185 @@
+.subTitle {
+   color: #262626;
+   font-size: 22px;
+   line-height: 38px;
+   font-weight: 600;
+   margin-bottom: 24px;
+}
+.titleInput {
+   font-size: 14px;
+   line-height: 22px;
+   font-weight: 400;
+   color: #262626;
+   margin-bottom: 2px;
+}
+
+.flexContainer {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 592px;
+   margin-bottom: 48px;
+}
+
+.inputText {
+   outline: none;
+   padding: 8px 12px;
+   width: 256px;
+   height: 40px;
+   border-radius: 2px;
+   border: 1px solid #D9D9D9;
+   background-color: #FFFFFF;
+   color: #595959;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 24px;
+   text-align: left;
+}
+.inputText::placeholder {
+   color: #BFBFBF;
+}
+.inputText:hover {
+   border-color: #40A9FF;
+}
+.inputText:focus {
+   border-color: #40A9FF;
+   box-shadow: 0px 0px 4px 0px rgba(24, 144, 255, 0.5);
+}
+.inputText:disabled {
+   background-color: #F5F5F5;
+   border-color: #D9D9D9;
+}
+
+.button {
+   outline: none;
+   width: 360px;
+   height: 40px;
+   border: none;
+   border-radius: 2px;
+   background-color: #1890FF;
+   color: #FFFFFF;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 24px;
+   text-align: center;
+   cursor: pointer;
+}
+.button:hover,
+.button:focus {
+   background-color: #40A9FF;
+}
+.button:active {
+   background-color: #096DD9;
+}
+.button:disabled {
+   border-color: #BCBCBC;
+   color: #BCBCBC;
+   background-color: #E5E5E5;
+}
+
+.inputFile {
+   display: none;
+}
+.inputFileLabel {
+   position: relative;
+   color: #595959;
+   background-color: #F5F5F5;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width: 256px;
+   height: 40px;
+   border: 1px dotted #D9D9D9;
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 22px;
+   cursor: pointer;
+   margin-top: 24px;
+}
+.inputFileLabel::before {
+   content: "";
+   background-color: #8C8C8C;
+   position: absolute;
+   width: 16px;
+   height: 2px;
+   left: 12px;
+}
+.inputFileLabel::after {
+   content: "";
+   background-color: #8C8C8C;
+   position: absolute;
+   width: 2px;
+   height: 16px;
+   left: 19px;
+}
+
+.containerInputRadio {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 272px;
+   height: 22px;
+   margin-bottom: 48px;
+}
+.inputRadioItem {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+.inputRadio {
+   width: 16px;
+   height: 16px;
+}
+
+.inputCheckboxItem {
+   max-width: 340px;
+   height: 22px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin-top: 48px;
+   margin-bottom: 50px;
+}
+.inputRadioLabel,
+.inputCheckboxLabel {
+   color: #595959;
+   font-size: 14px;
+   line-height: 22px;
+   margin-left: 8px;
+}
+.inputCheckbox {
+   width: 16px;
+   height: 16px;
+}
+
+@media (max-width: 575.98px) {
+   .flexContainer {
+      flex-direction: column;
+      margin-bottom: 24px;
+   }
+   .flexContainer > div {
+      margin-bottom: 24px;
+   }
+   .flexContainer div:last-child {
+      margin-bottom: 0px;
+   }
+   .inputFileLabel {
+      margin-top: 0px;
+      margin-bottom: 16px;
+      width: 100%;
+   }
+   .button {
+      width: 100%;
+   }
+   .inputContainer {
+      width: 100%;
+   }
+   .inputContainer .inputText {
+      width: 100%;
+   }
+   .inputCheckboxLabel {
+      font-size: 13px;
+   }
+}
