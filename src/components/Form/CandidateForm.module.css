@@ -22,19 +22,33 @@
    margin-bottom: 48px;
 }
 
-.inputText {
+
+.containerInputText {
+   position: relative;
+}
+.inputText,
+.inputTextError {
    outline: none;
    padding: 8px 12px;
    width: 256px;
    height: 40px;
    border-radius: 2px;
-   border: 1px solid #D9D9D9;
-   background-color: #FFFFFF;
-   color: #595959;
    font-weight: 400;
    font-size: 16px;
    line-height: 24px;
    text-align: left;
+   background-color: #FFFFFF;
+}
+.inputText {
+   border: 1px solid #D9D9D9;
+   color: #595959;
+}
+.inputTextError {
+   border: 1px solid #F5222D;
+   color: #F5222D;
+}
+.inputTextError:focus {
+   box-shadow: 0px 0px 4px 0px rgba(245, 34, 45, 0.5);
 }
 .inputText::placeholder {
    color: #BFBFBF;
@@ -50,6 +64,10 @@
    background-color: #F5F5F5;
    border-color: #D9D9D9;
 }
+
+
+
+
 
 .button {
    outline: none;
@@ -77,6 +95,10 @@
    color: #BCBCBC;
    background-color: #E5E5E5;
 }
+
+
+
+
 
 .inputFile {
    display: none;
@@ -114,6 +136,9 @@
    left: 19px;
 }
 
+
+
+
 .containerInputRadio {
    display: flex;
    flex-direction: row;
@@ -132,6 +157,8 @@
    width: 16px;
    height: 16px;
 }
+
+
 
 .inputCheckboxItem {
    max-width: 340px;
@@ -154,6 +181,18 @@
    height: 16px;
 }
 
+
+.errorMessage {
+   color: #F5222D;
+   font-size: 14px;
+   line-height: 22px;
+   position: absolute;
+   left: 0px;
+   bottom: -24px;
+}
+
+
+
 @media (max-width: 575.98px) {
    .flexContainer {
       flex-direction: column;
@@ -173,10 +212,9 @@
    .button {
       width: 100%;
    }
-   .inputContainer {
-      width: 100%;
-   }
-   .inputContainer .inputText {
+   .inputContainer,
+   .inputContainer .inputText,
+   .inputContainer .inputTextError {
       width: 100%;
    }
    .inputCheckboxLabel {

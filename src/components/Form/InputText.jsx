@@ -1,14 +1,17 @@
 import React from 'react';
-import styles from './Form.module.css';
+import styles from './CandidateForm.module.css';
 
-const InputText = (props) => {
+const InputText = ({input, meta, ...props}) => {
+   const hasError = meta.touched && meta.error;
+   console.log(input);
    return (
-      <div>
+      <div className={styles.containerInputText}>
          <input 
-            className={styles.inputText} 
-            type="text"
-            placeholder="Name"
+            className={hasError ? styles.inputTextError : styles.inputText}
+            {...input} 
+            {...props}
          />
+         {hasError && <div className={styles.errorMessage}>{meta.error}</div>}
       </div>
    )
 }

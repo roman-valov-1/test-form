@@ -16,3 +16,9 @@
   font-weight: 600;
   margin-bottom: 48px;
 }
+
+@media (max-width: 575.98px) {
+  .app-wrapper {
+    padding: 80px 16px 80px 16px;
+  }
+}

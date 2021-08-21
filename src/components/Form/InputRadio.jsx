@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Form.module.css';
+import styles from './CandidateForm.module.css';
 
 const InputRadio = (props) => {
    return (
@@ -11,6 +11,7 @@ const InputRadio = (props) => {
                id="man" 
                name="gender" 
                value="man"
+               checked
             />
             <label htmlFor="man" className={styles.inputRadioLabel}>Мужчина</label>
          </div>

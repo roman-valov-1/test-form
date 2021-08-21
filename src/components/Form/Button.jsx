@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Form.module.css';
+import styles from './CandidateForm.module.css';
 
 const Button = (props) => {
    return (

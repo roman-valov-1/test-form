@@ -1,11 +1,14 @@
 import './App.css';
-import Form from './components/Form/Form';
+import CandidateForm from './components/Form/CandidateForm';
 
 const App = (props) => {
+  let onSubmit = () => {
+    console.log(111)
+  }
   return (
     <section className="app-wrapper">
       <div className="main-title">Анкета соискателя</div>
-      <Form />
+      <CandidateForm onSubmit={onSubmit}/>
     </section>
   )
 }
