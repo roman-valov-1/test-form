@@ -1,0 +1,90 @@
+.modal {
+   height: 100vh;
+   width: 100vw;
+   background-color: rgba(0, 0, 0, 0.4);
+   position: fixed;
+   padding: 20px;
+   top: 0;
+   left: 0;
+   display: none;
+}
+.modal.active {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.modalContent {
+   width: 550px;
+   background-color: white;
+   padding: 40px;
+   opacity: 1;
+   border-radius: 4px;
+   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.23);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.modalTitle,
+.modalText {
+   color: #262626;
+   line-height: 38px;
+}
+.modalTitle {
+   font-size: 24px;
+   font-weight: 700;
+   margin-bottom: 8px;
+}
+.modalText {
+   font-size: 20px;
+   font-weight: 400;
+   margin-bottom: 40px;
+}
+.button {
+   outline: none;
+   width: 360px;
+   height: 40px;
+   border: none;
+   border-radius: 2px;
+   background-color: #1890FF;
+   color: #FFFFFF;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 24px;
+   text-align: center;
+   padding: 10px 0px;
+   cursor: pointer;
+}
+.button:hover,
+.button:focus {
+   background-color: #40A9FF;
+}
+.button:active {
+   background-color: #096DD9;
+}
+
+.modalCloseButton {
+   position: relative;
+   align-self: flex-end;
+   cursor: pointer;
+}
+.modalCloseButton::before {
+   content: "";
+   background-color: #2F80ED;
+   position: absolute;
+   width: 20px;
+   height: 2px;
+   left: -31px;
+   transform: rotate(45deg);
+   top: 6px;
+}
+.modalCloseButton::after {
+   content: "";
+   background-color: #2F80ED;
+   ;
+   position: absolute;
+   width: 2px;
+   height: 20px;
+   right: 20px;
+   transform: rotate(45deg);
+   bottom: -16px;
+}

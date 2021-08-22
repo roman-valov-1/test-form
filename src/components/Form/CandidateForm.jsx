@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InputText from './InputText';
 import InputFile from './InputFile';
 import Button from './Button';
@@ -10,11 +10,18 @@ import { composeValidators,
          required, 
          onlyLetters, 
          emailIsValid } from '../../validators/validators';
+import ModalPopUp from '../ModalPopUp/ModalPopUp';
 
 const CandidateForm = (props) => {
+   const [modalActive, setModalActive] = useState(false);
+
+   let onSubmit = () => {
+      setModalActive(true);
+   }
+
    return (
       <Form
-         onSubmit={props.onSubmit}
+         onSubmit={onSubmit}
          render={({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
                <div>
@@ -66,7 +73,7 @@ const CandidateForm = (props) => {
                   </div>
                   <div>
                      <div className={styles.subTitle}>Пол*</div>
-                     <InputRadio />
+                     <InputRadio validate={required} />
                   </div>
                   <div>
                      <div className={styles.subTitle}>Github*</div>
@@ -88,6 +95,10 @@ const CandidateForm = (props) => {
                   </div>
                   <Button />
                </div>
+               <ModalPopUp 
+                  active={modalActive} 
+                  setActive={setModalActive}
+               />
             </form>
          )}
       />

@@ -10,8 +10,6 @@ const InputRadio = (props) => {
                type="radio" 
                id="man" 
                name="gender" 
-               value="man"
-               checked
             />
             <label htmlFor="man" className={styles.inputRadioLabel}>Мужчина</label>
          </div>

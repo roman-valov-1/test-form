@@ -3,7 +3,6 @@ import styles from './CandidateForm.module.css';
 
 const InputText = ({input, meta, ...props}) => {
    const hasError = meta.touched && meta.error;
-   console.log(input);
    return (
       <div className={styles.containerInputText}>
          <input 
