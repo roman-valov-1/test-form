@@ -81,11 +81,11 @@
    font-size: 16px;
    line-height: 24px;
    text-align: center;
-   cursor: pointer;
 }
 .button:hover,
 .button:focus {
-   background-color: #aeb9c2;
+   background-color: #40A9FF;
+   ;
 }
 .button:active {
    background-color: #096DD9;
@@ -205,6 +205,89 @@
 }
 
 
+.modalTitle,
+.modalText {
+   color: #262626;
+   line-height: 38px;
+}
+.modalTitle {
+   font-size: 24px;
+   font-weight: 700;
+   margin-bottom: 15px;
+}
+.modalText {
+   font-size: 20px;
+   line-height: 38px;
+   padding: 0px 5px;
+   font-weight: 400;
+   margin-bottom: 40px;
+   overflow: scroll;
+   overflow-x: hidden;  
+}
+.modalText::-webkit-scrollbar {
+   width: 5px;
+   height: 170px;
+   border-radius: 4px;  
+}
+.modalText::-webkit-scrollbar-thumb {
+   background-color: #BCBCBC;
+   border-radius: 4px;
+}
+.modalButton {
+   outline: none;
+   width: 360px;
+   height: 40px;
+   border: none;
+   border-radius: 2px;
+   background-color: #1890FF;
+   color: #FFFFFF;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 24px;
+   text-align: center;
+   padding: 10px 0px;
+   cursor: pointer;
+   vertical-align: middle;
+}
+.modalButton:hover,
+.modalButton:focus {
+   background-color: #40A9FF;
+}
+.modalButton:active {
+   background-color: #096DD9;
+}
+
+.modalCloseButton {
+   position: absolute;
+   align-self: flex-end;
+   cursor: pointer;
+   right: 40px;
+   top: 40px;
+}
+.modalCloseButton::before {
+   content: "";
+   background-color: #2F80ED;
+   position: absolute;
+   width: 20px;
+   height: 2px;
+   left: -31px;
+   transform: rotate(45deg);
+   top: 6px;
+}
+.modalCloseButton::after {
+   content: "";
+   background-color: #2F80ED;
+   ;
+   position: absolute;
+   width: 2px;
+   height: 20px;
+   right: 20px;
+   transform: rotate(45deg);
+   bottom: -16px;
+}
+
+
+
 
 @media (max-width: 575.98px) {
    .flexContainer {
@@ -232,5 +315,25 @@
    }
    .inputCheckboxLabel {
       font-size: 13px;
+   }
+   .modal {
+      padding: 10px;
+   }
+   .modalContent {
+      width: 340px;
+      padding: 20px 10px;
+   }
+   .modalTitle {
+      margin-bottom: 20px;
+   }
+   .modalText {
+      margin-bottom: 20px;
+   }
+   .modalButton {
+      width: 300px;
+   }
+   .modalCloseButton {
+      right: 10px;
+      top: 20px;
    }
 }

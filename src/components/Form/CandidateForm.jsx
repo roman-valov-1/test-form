@@ -14,11 +14,16 @@ import {
 import ModalPopUp from '../ModalPopUp/ModalPopUp';
 
 const CandidateForm = (props) => {
-   const [modalActive, setModalActive] = useState(false);
+   const [modalFormActive, setModalFormActive] = useState(false);
+   const [modalPrivacyActive, setModalPrivacyActive] = useState(false);
 
    let onSubmit = (formData) => {
-      console.log(formData);
-      setModalActive(true);
+      setModalFormActive(false);
+      formData.name = '';
+      formData.surname = '';
+      formData.email = '';
+      formData.github = '';
+      formData.privacyPolicy = false;
    }
 
    return (
@@ -88,7 +93,7 @@ const CandidateForm = (props) => {
                            Вставьте ссылку на Github
                         </div>
                         <Field
-                           name="text"
+                           name="github"
                            component={InputText}
                            type="text"
                            placeholder="Вставьте ссылку на Github"
@@ -100,24 +105,29 @@ const CandidateForm = (props) => {
                         type="checkbox"
                         name="privacyPolicy"
                         component={InputCheckbox}
+                        active={modalPrivacyActive}
+                        setActive={setModalPrivacyActive}
                      />
                   </div>
                   <div>
                      <button
                         className={styles.button}
-                        type='submit'
+                        type='button'
                         disabled={(
                            values.name &&
                            values.surname &&
                            values.email &&
-                           values.privacyPolicy) ? undefined : true}>Отправить</button>
+                           values.privacyPolicy) ? undefined : true}
+                        onClick={() => setModalFormActive(true)}>Отправить</button>
                   </div>
                </div>
-               <ModalPopUp
-                  active={modalActive}
-                  setActive={setModalActive}
-               />
-            </form>
+               <ModalPopUp active={modalFormActive}>
+                  <div className={styles.modalCloseButton} onClick={() => setModalFormActive(false)}></div>
+                  <div className={styles.modalTitle}>Спасибо {values.name}!</div>
+                  <div className={styles.modalText}>Мы скоро свяжемся с вами </div>
+                  <button type="submit" className={styles.modalButton}>Понятно</button>
+               </ModalPopUp>
+            </form >
          )}
       />
    )
