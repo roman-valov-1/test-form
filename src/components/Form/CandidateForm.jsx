@@ -16,6 +16,8 @@ import ModalPopUp from '../ModalPopUp/ModalPopUp';
 const CandidateForm = (props) => {
    const [modalFormActive, setModalFormActive] = useState(false);
    const [modalPrivacyActive, setModalPrivacyActive] = useState(false);
+   const [fileInput, setFileInput] = useState(null);
+   const fileInputRef = React.useRef();
    
 
    let onSubmit = (formData) => {
@@ -25,6 +27,8 @@ const CandidateForm = (props) => {
       formData.email = '';
       formData.github = '';
       formData.privacyPolicy = false;
+      fileInputRef.current.value = "";
+      setFileInput(null);
    }
 
    return (
@@ -77,7 +81,10 @@ const CandidateForm = (props) => {
                         <div className={styles.inputContainer}>
                            <InputFile 
                               name="file" 
-                              type="file" 
+                              type="file"
+                              filesInput={fileInput}
+                              setFileInput={setFileInput}
+                              fileInputRef={fileInputRef}
                            />
                         </div>
                      </div>

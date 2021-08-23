@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './InputFile.module.css';
 
-const InputFile = ({input, ...props}) => {
+const InputFile = ({fileInputRef, fileInput, setFileInput, input, ...props}) => {
    const [visibleInputFile, setVisibleInputFile] = useState(false);
 
    const inputFileClasses = [styles.inputFile]
@@ -20,6 +20,9 @@ const InputFile = ({input, ...props}) => {
             className={inputFileClasses.join(' ')}
             {...input}
             {...props}
+            value={fileInput}
+            onChange={ (e) => setFileInput(e.target.files[0])}
+            ref={fileInputRef}
          />
          <label 
             htmlFor="inputFile" 
