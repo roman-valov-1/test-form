@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
 import InputText from './InputText';
 import InputFile from './InputFile';
-import Button from './Button';
 import InputRadio from './InputRadio';
 import InputCheckbox from './InputCheckbox';
 import styles from './CandidateForm.module.css';
 import { Form, Field } from 'react-final-form';
-import { composeValidators, 
-         required, 
-         onlyLetters, 
-         emailIsValid } from '../../validators/validators';
+import {
+   composeValidators,
+   required,
+   onlyLetters,
+   emailIsValid
+} from '../../validators/validators';
 import ModalPopUp from '../ModalPopUp/ModalPopUp';
 
 const CandidateForm = (props) => {
    const [modalActive, setModalActive] = useState(false);
 
-   let onSubmit = () => {
+   let onSubmit = (formData) => {
+      console.log(formData);
       setModalActive(true);
    }
 
    return (
       <Form
          onSubmit={onSubmit}
-         render={({ handleSubmit }) => (
+         render={({ handleSubmit, values }) => (
             <form onSubmit={handleSubmit}>
                <div>
                   <div>
@@ -32,9 +34,9 @@ const CandidateForm = (props) => {
                            <div className={styles.titleInput}>
                               Имя*
                            </div>
-                           <Field 
-                              name="name" 
-                              component={InputText} 
+                           <Field
+                              name="name"
+                              component={InputText}
                               type="text"
                               placeholder="Имя"
                               validate={composeValidators(required, onlyLetters)}
@@ -44,9 +46,9 @@ const CandidateForm = (props) => {
                            <div className={styles.titleInput}>
                               Фамилия*
                            </div>
-                           <Field 
-                              name="surname" 
-                              component={InputText} 
+                           <Field
+                              name="surname"
+                              component={InputText}
                               type="text"
                               placeholder="Фамилия"
                               validate={composeValidators(required, onlyLetters)}
@@ -58,9 +60,9 @@ const CandidateForm = (props) => {
                            <div className={styles.titleInput}>
                               Электронная почта*
                            </div>
-                           <Field 
-                              name="email" 
-                              component={InputText} 
+                           <Field
+                              name="email"
+                              component={InputText}
                               type="email"
                               placeholder="Электронная почта"
                               validate={composeValidators(required, emailIsValid)}
@@ -73,7 +75,11 @@ const CandidateForm = (props) => {
                   </div>
                   <div>
                      <div className={styles.subTitle}>Пол*</div>
-                     <InputRadio validate={required} />
+                     <Field
+                        component={InputRadio}
+                        type="radio"
+                        name="gender"
+                     />
                   </div>
                   <div>
                      <div className={styles.subTitle}>Github*</div>
@@ -81,22 +87,34 @@ const CandidateForm = (props) => {
                         <div className={styles.titleInput}>
                            Вставьте ссылку на Github
                         </div>
-                        <Field 
-                           name="text" 
-                           component={InputText} 
+                        <Field
+                           name="text"
+                           component={InputText}
                            type="text"
-                           placeholder="Электронная почта"
-                           validate={required}
+                           placeholder="Вставьте ссылку на Github"
                         />
                      </div>
                   </div>
                   <div>
-                     <InputCheckbox />
+                     <Field
+                        type="checkbox"
+                        name="privacyPolicy"
+                        component={InputCheckbox}
+                     />
                   </div>
-                  <Button />
+                  <div>
+                     <button
+                        className={styles.button}
+                        type='submit'
+                        disabled={(
+                           values.name &&
+                           values.surname &&
+                           values.email &&
+                           values.privacyPolicy) ? undefined : true}>Отправить</button>
+                  </div>
                </div>
-               <ModalPopUp 
-                  active={modalActive} 
+               <ModalPopUp
+                  active={modalActive}
                   setActive={setModalActive}
                />
             </form>

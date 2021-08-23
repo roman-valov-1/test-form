@@ -88,3 +88,16 @@
    transform: rotate(45deg);
    bottom: -16px;
 }
+
+@media (max-width: 575.98px) {
+   .modal {
+      padding: 10px;
+   }
+   .modalContent {
+      width: 340px;
+      padding: 20px 10px;
+   }
+   .button {
+      width: 300px;
+   }
+}

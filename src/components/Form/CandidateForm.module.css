@@ -85,7 +85,7 @@
 }
 .button:hover,
 .button:focus {
-   background-color: #40A9FF;
+   background-color: #aeb9c2;
 }
 .button:active {
    background-color: #096DD9;
@@ -157,6 +157,9 @@
    width: 16px;
    height: 16px;
 }
+.inputRadioLabel {
+   cursor: pointer;
+}
 
 
 
@@ -170,7 +173,7 @@
    margin-bottom: 50px;
 }
 .inputRadioLabel,
-.inputCheckboxLabel {
+.inputCheckboxDescription {
    color: #595959;
    font-size: 14px;
    line-height: 22px;
@@ -179,6 +182,16 @@
 .inputCheckbox {
    width: 16px;
    height: 16px;
+}
+.inputCheckboxDescription {
+   cursor: default;
+}
+.inputCheckboxDescription span {
+   display: inline-block;
+   height: 21px;
+   color: #1890FF;
+   border-bottom: 1px solid #1890FF;
+   cursor: pointer;
 }
 
 
