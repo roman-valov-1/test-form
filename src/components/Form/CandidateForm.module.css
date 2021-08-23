@@ -23,51 +23,6 @@
 }
 
 
-.containerInputText {
-   position: relative;
-}
-.inputText,
-.inputTextError {
-   outline: none;
-   padding: 8px 12px;
-   width: 256px;
-   height: 40px;
-   border-radius: 2px;
-   font-weight: 400;
-   font-size: 16px;
-   line-height: 24px;
-   text-align: left;
-   background-color: #FFFFFF;
-}
-.inputText {
-   border: 1px solid #D9D9D9;
-   color: #595959;
-}
-.inputTextError {
-   border: 1px solid #F5222D;
-   color: #F5222D;
-}
-.inputTextError:focus {
-   box-shadow: 0px 0px 4px 0px rgba(245, 34, 45, 0.5);
-}
-.inputText::placeholder {
-   color: #BFBFBF;
-}
-.inputText:hover {
-   border-color: #40A9FF;
-}
-.inputText:focus {
-   border-color: #40A9FF;
-   box-shadow: 0px 0px 4px 0px rgba(24, 144, 255, 0.5);
-}
-.inputText:disabled {
-   background-color: #F5F5F5;
-   border-color: #D9D9D9;
-}
-
-
-
-
 
 .button {
    outline: none;
@@ -98,71 +53,6 @@
 
 
 
-
-
-.inputFile {
-   display: none;
-}
-.inputFileLabel {
-   position: relative;
-   color: #595959;
-   background-color: #F5F5F5;
-   display: inline-flex;
-   justify-content: center;
-   align-items: center;
-   width: 256px;
-   height: 40px;
-   border: 1px dotted #D9D9D9;
-   font-weight: normal;
-   font-size: 14px;
-   line-height: 22px;
-   cursor: pointer;
-   margin-top: 24px;
-}
-.inputFileLabel::before {
-   content: "";
-   background-color: #8C8C8C;
-   position: absolute;
-   width: 16px;
-   height: 2px;
-   left: 12px;
-}
-.inputFileLabel::after {
-   content: "";
-   background-color: #8C8C8C;
-   position: absolute;
-   width: 2px;
-   height: 16px;
-   left: 19px;
-}
-
-
-
-
-.containerInputRadio {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   max-width: 272px;
-   height: 22px;
-   margin-bottom: 48px;
-}
-.inputRadioItem {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-}
-.inputRadio {
-   width: 16px;
-   height: 16px;
-}
-.inputRadioLabel {
-   cursor: pointer;
-}
-
-
-
 .inputCheckboxItem {
    max-width: 340px;
    height: 22px;
@@ -172,7 +62,6 @@
    margin-top: 48px;
    margin-bottom: 50px;
 }
-.inputRadioLabel,
 .inputCheckboxDescription {
    color: #595959;
    font-size: 14px;
@@ -195,6 +84,7 @@
 }
 
 
+
 .errorMessage {
    color: #F5222D;
    font-size: 14px;
@@ -203,6 +93,7 @@
    left: 0px;
    bottom: -24px;
 }
+
 
 
 .modalTitle,
@@ -256,7 +147,6 @@
 .modalButton:active {
    background-color: #096DD9;
 }
-
 .modalCloseButton {
    position: absolute;
    align-self: flex-end;
@@ -288,7 +178,6 @@
 
 
 
-
 @media (max-width: 575.98px) {
    .flexContainer {
       flex-direction: column;
@@ -299,11 +188,6 @@
    }
    .flexContainer div:last-child {
       margin-bottom: 0px;
-   }
-   .inputFileLabel {
-      margin-top: 0px;
-      margin-bottom: 16px;
-      width: 100%;
    }
    .button {
       width: 100%;

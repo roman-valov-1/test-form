@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CandidateForm.module.css';
+import styles from './InputText.module.css';
 
 const InputText = ({input, meta, ...props}) => {
    const hasError = meta.touched && meta.error;

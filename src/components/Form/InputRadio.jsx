@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CandidateForm.module.css';
+import styles from './InputRadio.module.css';
 
 const InputRadio = (props) => {
    return (

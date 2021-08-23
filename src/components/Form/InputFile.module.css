@@ -1,0 +1,79 @@
+.inputFile {
+   width: 256px;
+   height: 22px;
+   font-size: 14px;
+   line-height: 22px;
+   background-color: #E6F7FF;
+   color: #1890FF;   
+   position: relative;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   padding-left: 28px;
+   padding-right: 20px;
+   overflow: hidden;
+   cursor: pointer;
+}
+.inputFile.active {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.inputFile::before {
+   content: url(./../../assets/Vector.png);
+   position: absolute;
+   left: 8px;
+   top: 2px;
+}
+.inputFile::after {
+   content: url(./../../assets/close-icon.png);
+   position: absolute;
+   right: 6px;
+   top: 2px;
+}
+.inputFile::file-selector-button {
+   display: none;
+}
+.inputFileLabel {
+   position: relative;
+   color: #595959;
+   background-color: #F5F5F5;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width: 256px;
+   height: 40px;
+   border: 1px dotted #D9D9D9;
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 22px;
+   cursor: pointer;
+   margin-top: 24px;
+}
+.inputFileLabel.hidden {
+   display: none;
+}
+.inputFileLabel::before {
+   content: "";
+   background-color: #8C8C8C;
+   position: absolute;
+   width: 16px;
+   height: 2px;
+   left: 12px;
+}
+.inputFileLabel::after {
+   content: "";
+   background-color: #8C8C8C;
+   position: absolute;
+   width: 2px;
+   height: 16px;
+   left: 19px;
+}
+
+@media (max-width: 575.98px) {
+   .inputFileLabel {
+      margin-top: 0px;
+      margin-bottom: 16px;
+      width: 100%;
+   }
+}

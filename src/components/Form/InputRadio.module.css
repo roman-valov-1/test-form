@@ -1,0 +1,31 @@
+.containerInputRadio {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 272px;
+   height: 22px;
+   margin-bottom: 48px;
+}
+.inputRadioItem {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+.inputRadio {
+   width: 16px;
+   height: 16px;
+}
+.inputRadioLabel {
+   cursor: pointer;
+}
+.inputRadioLabel {
+   color: #595959;
+   font-size: 14px;
+   line-height: 22px;
+   margin-left: 8px;
+}
+
+@media (max-width: 575.98px) {
+
+}

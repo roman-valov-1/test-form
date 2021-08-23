@@ -16,6 +16,7 @@ import ModalPopUp from '../ModalPopUp/ModalPopUp';
 const CandidateForm = (props) => {
    const [modalFormActive, setModalFormActive] = useState(false);
    const [modalPrivacyActive, setModalPrivacyActive] = useState(false);
+   
 
    let onSubmit = (formData) => {
       setModalFormActive(false);
@@ -74,7 +75,10 @@ const CandidateForm = (props) => {
                            />
                         </div>
                         <div className={styles.inputContainer}>
-                           <InputFile />
+                           <InputFile 
+                              name="file" 
+                              type="file" 
+                           />
                         </div>
                      </div>
                   </div>
